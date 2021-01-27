@@ -7,17 +7,7 @@ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 
 helm install nginx-ingress ingress-nginx/ingress-nginx \
     --namespace kube-system \
-    --set controller.replicaCount=2 \
-    --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux \
-    --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux
-
-helm install nginx-ingress ingress-nginx/ingress-nginx \
-    --namespace kube-system \
-    --set controller.replicaCount=2 \
-    --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux \
-    --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux \
-    --set controller.service.loadBalancerIP="40.83.140.242" \
-    --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-dns-label-name"="DNS_LABEL" 
+    --set controller.replicaCount=2 
 
 
 az network dns record-set a add-record \

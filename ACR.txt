@@ -1,2 +1,3 @@
 ACR_USERNAME: "username"
 ACR_PASSWORD: "key"
+KUBECONFIG: "KUBECONFIG file"
